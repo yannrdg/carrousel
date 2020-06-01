@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style et positionnement basique */
+body {
+  padding: 1rem;
+  text-align: right;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  padding: 1rem;
+}
+
+#box>button {
+  position: absolute;
+}
+
+#box>button:first-of-type{
+    left: 0;
+    bottom: 50%;
+}
+
+#box>button:nth-of-type(2){
+    right: 0;
+    top: 0;
+}
+
+#box>button:last-of-type{
+    right: 0;
+    bottom: 50%;
+}
+
+img {
+  width: 20vw;
+  height: 10vw;
+}
+
+#box{
+    position: absolute;
+
+}
+
+#boutons{
+    position: absolute;
+    bottom: 0;
+    left: 7vw;
+}
+
+/*Carroussel*/
+
+
+
+@-webkit-keyframes slide-animation{
+    0%{left:0;}
+    11%{left:0;}
+    22%{left:20vw;}
+    33%{left:20vw;}
+    44%{left:40vw;}
+    55%{left:40vw;}
+    66%{left:20vw;}
+    77%{left:20vw;}
+    88%{left:0;}
+    100%{left:0;}
+}
+
+
+
+
