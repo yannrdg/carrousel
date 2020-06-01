@@ -38,8 +38,9 @@ p {
 }
 
 img {
-  width: 20vw;
-  height: 10vw;
+  width: 60vw;
+  height: 30vw;
+  object-fit: cover;
 }
 
 #box{
@@ -53,22 +54,6 @@ img {
     left: 7vw;
 }
 
-/*Carroussel*/
-
-
-
-@-webkit-keyframes slide-animation{
-    0%{left:0;}
-    11%{left:0;}
-    22%{left:20vw;}
-    33%{left:20vw;}
-    44%{left:40vw;}
-    55%{left:40vw;}
-    66%{left:20vw;}
-    77%{left:20vw;}
-    88%{left:0;}
-    100%{left:0;}
-}
 
 
 
