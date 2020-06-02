@@ -3,6 +3,9 @@ const nbDiapos = 3;
 // Attention l'indexation va de la diapo 0 à la diapo 2
 let indexDiapo = 0;
 
+//Variable stockant l'ID de la fonction setInterval pour permettre l'arrêt du carrousel
+let intervalCarrousel; 
+
 // Capture DOM
 // Boutons pour la gestion des événements
 const boutons = document.querySelectorAll('button');
@@ -42,7 +45,7 @@ boutons.forEach(function(bouton) {
         indexDiapo = 2;
         break;
       case "pause":
-
+	clearInterval(intervalCarrousel);
         break;
       case "suiv":
 	indexDiapo = (indexDiapo + 1) % nbDiapos;
@@ -55,8 +58,7 @@ boutons.forEach(function(bouton) {
   });
 });
 
-
-window.setInterval(function(){
+intervalCarrousel = window.setInterval(function(){
   	indexDiapo = (indexDiapo + 1) % nbDiapos;  
 	afficheDiapo();
 }, 5000);
