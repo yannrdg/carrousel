@@ -69,3 +69,12 @@ boutons.forEach(function(bouton, index) {
 });
 
 
+window.setInterval(function(){
+    // Bouton diapositive suivante
+    indexDiapo += 1;
+    // Gestion du débordement (indexDiapo est compris entre 0 et 2)
+    if (indexDiapo > 2) {
+      indexDiapo = 0;
+    }
+    afficheDiapo();
+}, 1000);
