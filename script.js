@@ -35,6 +35,9 @@ boutons.forEach(function(bouton) {
       case "prec":
 	indexDiapo = (nbDiapos + indexDiapo - 1) % nbDiapos;  
         break;
+      case "suiv":
+	indexDiapo = (indexDiapo + 1) % nbDiapos;
+        break;
       case "un":
         indexDiapo = 0;
         break;
@@ -46,9 +49,6 @@ boutons.forEach(function(bouton) {
         break;
       case "pause":
 	clearInterval(intervalCarrousel);
-        break;
-      case "suiv":
-	indexDiapo = (indexDiapo + 1) % nbDiapos;
         break;
       case "play":	
 	intervalCarrousel = window.setInterval(function(){
