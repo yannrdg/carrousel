@@ -30,11 +30,7 @@ boutons.forEach(function(bouton) {
     // Mise à jour de indexDiapo
     switch (bouton.id) {
       case "prec":
-        indexDiapo -= 1;
-        // Gestion du débordement (indexDiapo est compris entre 0 et 2)
-        if (indexDiapo < 0) {
-          indexDiapo = nbDiapos - 1;
-        }
+	indexDiapo = (nbDiapos + indexDiapo - 1) % nbDiapos;  
         break;
       case "un":
         indexDiapo = 0;
@@ -49,12 +45,7 @@ boutons.forEach(function(bouton) {
 
         break;
       case "suiv":
-        // Bouton diapositive suivante
-        indexDiapo += 1;
-        // Gestion du débordement (indexDiapo est compris entre 0 et 2)
-        if (indexDiapo > 2) {
-          indexDiapo = 0;
-        }
+	indexDiapo = (indexDiapo + 1) % nbDiapos;
         break;
       default:
         console.log('Il y a un problème !');
@@ -66,11 +57,6 @@ boutons.forEach(function(bouton) {
 
 
 window.setInterval(function(){
-    // Bouton diapositive suivante
-    indexDiapo += 1;
-    // Gestion du débordement (indexDiapo est compris entre 0 et 2)
-    if (indexDiapo > 2) {
-      indexDiapo = 0;
-    }
-    afficheDiapo();
+  	indexDiapo = (indexDiapo + 1) % nbDiapos;  
+	afficheDiapo();
 }, 5000);
