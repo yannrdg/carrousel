@@ -24,6 +24,17 @@ function afficheDiapo () {
     
   }
 
+//Fonction setInterval pour faire défiler les images automatiquement
+function lancerCarrousel(){
+	intervalCarrousel = window.setInterval(function(){
+		indexDiapo = (indexDiapo + 1) % nbDiapos;  
+		afficheDiapo();
+	}, 5000);
+}
+
+//Initialisation fonction lancerCarrousel
+lancerCarrousel();
+
 // Initialisation au chargement de la page
 afficheDiapo();
 
@@ -50,11 +61,8 @@ boutons.forEach(function(bouton) {
       case "pause":
 	clearInterval(intervalCarrousel);
         break;
-      case "play":	
-	intervalCarrousel = window.setInterval(function(){
-		indexDiapo = (indexDiapo + 1) % nbDiapos;  
-		afficheDiapo();
-	}, 5000);
+      case "play":
+	lancerCarrousel();	
 	break;
       default:
         console.log('Il y a un problème !');
@@ -64,7 +72,3 @@ boutons.forEach(function(bouton) {
   });
 });
 
-intervalCarrousel = window.setInterval(function(){
-  	indexDiapo = (indexDiapo + 1) % nbDiapos;  
-	afficheDiapo();
-}, 5000);
