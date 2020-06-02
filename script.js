@@ -10,24 +10,22 @@ const boutons = document.querySelectorAll('button');
 const source = document.querySelector('source');
 const image = document.querySelector('img');
 
-// Fonction d'affichage d'une diapo n
-function afficheDiapo (n) {
-    // Mise à jour de l'index
-    indexDiapo = n;
+// Fonction d'affichage de la diapo indexDiapo
+function afficheDiapo () {
     // Modification de l'attribut srcset de l'élément HTML source
-    source.setAttribute('srcset', `imagespourcarrousel/image${n + 1}_350w.jpg 350w, imagespourcarrousel/image${n + 1}_700w.jpg 700w, imagespourcarrousel/image${n + 1}_1050w.jpg 1050w, imagespourcarrousel/image${n + 1}_1400w.jpg 1400w, imagespourcarrousel/image${n + 1}_1750w.jpg 1750w, imagespourcarrousel/image${n + 1}_2100w.jpg 2100w`);
+    source.setAttribute('srcset', `imagespourcarrousel/image${indexDiapo + 1}_350w.jpg 350w, imagespourcarrousel/image${indexDiapo + 1}_700w.jpg 700w, imagespourcarrousel/image${indexDiapo + 1}_1050w.jpg 1050w, imagespourcarrousel/image${indexDiapo + 1}_1400w.jpg 1400w, imagespourcarrousel/image${indexDiapo + 1}_1750w.jpg 1750w, imagespourcarrousel/image${indexDiapo + 1}_2100w.jpg 2100w`);
     // Modification de l'attribut src de l'élément HTML image
-    image.setAttribute('src', `imagespourcarrousel/image${n + 1}_2100w.jpg`);
+    image.setAttribute('src', `imagespourcarrousel/image${indexDiapo + 1}_2100w.jpg`);
     // Modification de l'attribut alt de l'élément HTML image
-    image.setAttribute('alt', `image ${n + 1}`);
+    image.setAttribute('alt', `image ${indexDiapo + 1}`);
     
   }
 
 // Initialisation au chargement de la page
-afficheDiapo(0);
+afficheDiapo();
 
 // Gestion des événements
-boutons.forEach((bouton, index) => {
+boutons.forEach(function(bouton, index) {
   bouton.addEventListener('click', () => {
     // Mise à jour de indexDiapo
     switch (index) {
@@ -66,12 +64,8 @@ boutons.forEach((bouton, index) => {
         console.log('Il y a un problème !');
     }
     // Affichage de la diapositive
-    afficheDiapo(indexDiapo);
+    afficheDiapo();
   });
 });
 
-var myVar;
 
-window.setInterval(function afficheDiapo(){
-    n += 1;
-}, 1000);
