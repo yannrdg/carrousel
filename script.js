@@ -73,4 +73,4 @@ window.setInterval(function(){
       indexDiapo = 0;
     }
     afficheDiapo();
-}, 1000);
+}, 5000);
