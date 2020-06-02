@@ -25,34 +25,30 @@ function afficheDiapo () {
 afficheDiapo();
 
 // Gestion des événements
-boutons.forEach(function(bouton, index) {
+boutons.forEach(function(bouton) {
   bouton.addEventListener('click', () => {
     // Mise à jour de indexDiapo
-    switch (index) {
-      case 0:
-        // Bouton diapositive précédente
+    switch (bouton.id) {
+      case "prec":
         indexDiapo -= 1;
         // Gestion du débordement (indexDiapo est compris entre 0 et 2)
         if (indexDiapo < 0) {
           indexDiapo = nbDiapos - 1;
         }
         break;
-      case 1:
-        // Bouton diapositive 1
+      case "un":
         indexDiapo = 0;
         break;
-      case 2:
-        // Bouton diapositive 2
+      case "deux":
         indexDiapo = 1;
         break;
-      case 3:
-        // Bouton diapositive 3
+      case "trois":
         indexDiapo = 2;
         break;
-      case 4:
+      case "pause":
 
         break;
-      case 5:
+      case "suiv":
         // Bouton diapositive suivante
         indexDiapo += 1;
         // Gestion du débordement (indexDiapo est compris entre 0 et 2)
