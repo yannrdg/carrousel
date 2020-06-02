@@ -50,6 +50,12 @@ boutons.forEach(function(bouton) {
       case "suiv":
 	indexDiapo = (indexDiapo + 1) % nbDiapos;
         break;
+      case "play":	
+	intervalCarrousel = window.setInterval(function(){
+		indexDiapo = (indexDiapo + 1) % nbDiapos;  
+		afficheDiapo();
+	}, 5000);
+	break;
       default:
         console.log('Il y a un problème !');
     }
